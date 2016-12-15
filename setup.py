@@ -86,7 +86,7 @@ Examples are contained in ``contrail.security.ca.test``.
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     entry_points={
-        'console_scripts': ['contrail-ca' = contrail.security.ca.utils.cli:main',
+        'console_scripts': ['contrail-ca = contrail.security.ca.utils.cli:main',
                             ],
         },
     zip_safe = False

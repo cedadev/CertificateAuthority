@@ -245,7 +245,12 @@ class CertificateAuthorityCLI(object):
          
         # Call appropriate command function assigned via set_defaults calls 
         # above
-        parsed_args.func(parsed_args)
+        if hasattr(parsed_args, "func"):
+            parsed_args.func(parsed_args)
+        else:
+            # func attribute is not defined if no arguments are passed
+            parser.print_help()
+            raise SystemExit(1)
     
 
 def main():
