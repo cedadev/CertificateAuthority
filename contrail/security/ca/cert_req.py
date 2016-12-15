@@ -51,7 +51,7 @@ class CertReqUtils(object):
         @type key_pair: string/None
         @param key_pair: public/private key pair
         @type message_digest: basestring
-        @param message_digest: message digest type - default is MD5
+        @param message_digest: message digest type - default is SHA256
         @return certificate request PEM text and private key PEM text
         @rtype: base string
         """

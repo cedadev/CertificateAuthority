@@ -59,8 +59,8 @@ class CertificateAuthorityCLI(object):
     def _issue_cert(self, cmdline_args):
         '''Issue certificate based on command line arguments
 
-        :type    argparse.Namespace
-        :param     cmdline_args: command line arguments from argparse 
+        :type cmdline_args: argparse.Namespace
+        :param cmdline_args: command line arguments from argparse 
         ArgumentParser
         '''
         with open(cmdline_args.cacert_in_filepath, 'rb') as cacert_file:
@@ -235,14 +235,24 @@ class CertificateAuthorityCLI(object):
         
         # Parses from arguments input to this method if set, otherwise parses 
         # from sys.argv
-        parsed_args = parser.parse_args(args)
+        if len(args) > 0:
+            parsed_args = parser.parse_args(args)
+        else:
+            parsed_args = parser.parse_args()
+
         if parsed_args.debug:
             logging.getLogger().setLevel(logging.DEBUG)
          
         # Call appropriate command function assigned via set_defaults calls 
-        # above   
+        # above
         parsed_args.func(parsed_args)
     
 
-if __name__=='__main__':
+def main():
+    """Certificate Authority CLI - Wrapper for use by script entry point"""
     CertificateAuthorityCLI().main()
+
+
+if __name__=='__main__':
+    main()
+
