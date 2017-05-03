@@ -226,7 +226,7 @@ class CertificateAuthorityCLI(object):
             
         issue_cert_arg_parser.add_argument("-S", "--subject-alt-names", 
                           dest="subject_alt_names", 
-                          metavar="<hostname 1>, ... <hostname n>",
+                          metavar="DNS:<hostname 1>, ..., DNS:<hostname n>",
                           default=None,
                           help="Subject alternative names extension.  Set to "
                                "the hostname or hostnames to include.")

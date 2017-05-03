@@ -21,12 +21,12 @@ except ImportError:
 
 setup(
     name =            	'ContrailCA',
-    version =         	'0.4.0',
+    version =         	'0.4.1',
     description =     	'Certificate Authority',
     long_description = 	'''\
-Provides a simple implementation of a Certificate Authority.  It uses the 
-PyOpenSSL for bindings to OpenSSL but also includes the ability to callout 
-direct to an openssl command for more fine-grained control over the certificate 
+Provides a simple implementation of a Certificate Authority.  It uses the
+PyOpenSSL for bindings to OpenSSL but also includes the ability to callout
+direct to an openssl command for more fine-grained control over the certificate
 issuing process if required.
 
 The code has been developed for the Contrail Project, http://contrail-project.eu/
@@ -50,7 +50,7 @@ Examples are contained in ``contrail.security.ca.test``.
     url =             	'https://github.com/cedadev/CertificateAuthority',
     platforms =         ['POSIX', 'Linux', 'Windows'],
     install_requires =  ['PyOpenSSL'],
-    
+
     # Required for Subject Alt Names unit test only
     extras_require = {'subjectAltName_support': 'pyasn1'},
     license =           __license__,
@@ -59,8 +59,8 @@ Examples are contained in ``contrail.security.ca.test``.
     package_data =      {
         'contrail.security.ca.test': [
             'README', 'LICENSE', '*.cfg', '*.crt', '*.key',
-            'ca_config/serial', 'ca_config/index.txt', 
-            'ca_config/newcerts/README', 'ca_config/*.crt', 'ca_config/*.key', 
+            'ca_config/serial', 'ca_config/index.txt',
+            'ca_config/newcerts/README', 'ca_config/*.crt', 'ca_config/*.key',
             'ca_config/test-ca.cfg'
             ]
     },
