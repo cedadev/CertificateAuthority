@@ -8,7 +8,6 @@ __license__ = "BSD - see LICENSE file in top-level directory"
 __contact__ = "Philip.Kershaw@stfc.ac.uk"
 __revision__ = "$Id: $"
 import sys
-from optparse import OptionParser, OptionGroup
 from argparse import ArgumentParser
 import logging
 

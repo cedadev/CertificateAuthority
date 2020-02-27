@@ -57,8 +57,8 @@ class CertificateAuthorityWithCalloutTestCase(CertificateAuthorityBaseTestCase):
                           cert_issue_cmd=cert_issue_cmd,
                           min_key_nbits=None)
         
-    def test02_create_from_files(self):
-        ca = CertificateAuthorityWithCallout.from_files(
+    def test02_create_from_keyfiles(self):
+        ca = CertificateAuthorityWithCallout.from_keyfiles(
                             self.__class__.CA_CERT_FILEPATH, 
                             self.__class__.CA_KEY_FILEPATH, 
                             key_file_passwd=self.__class__.CA_KEY_FILE_PASSWD)

@@ -93,8 +93,8 @@ class CertificateAuthorityTestCase(CertificateAuthorityBaseTestCase):
         self.assertEqual(ca.serial_num_counter, 11, 
                          'Error setting serial_num_counter')
         
-    def test04_create_from_files(self):
-        ca = CertificateAuthority.from_files(self.__class__.CA_CERT_FILEPATH, 
+    def test04_create_from_keyfiles(self):
+        ca = CertificateAuthority.from_keyfiles(self.__class__.CA_CERT_FILEPATH, 
                             self.__class__.CA_KEY_FILEPATH, 
                             key_file_passwd=self.__class__.CA_KEY_FILE_PASSWD)
         self.assertTrue(ca, 'null ca object')

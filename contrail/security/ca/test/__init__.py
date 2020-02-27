@@ -38,9 +38,9 @@ class CertificateAuthorityBaseTestCase(unittest.TestCase):
     @classmethod
     def _create_ca_and_cert_req(cls):
         key_pair, cert_req = cls.create_cert_req()
-        ca = cls.CERT_AUTHORITY_CLASS.from_files(cls.CA_CERT_FILEPATH, 
-                                                 cls.CA_KEY_FILEPATH, 
-                                                 cls.CA_KEY_FILE_PASSWD)
+        ca = cls.CERT_AUTHORITY_CLASS.from_keyfiles(cls.CA_CERT_FILEPATH, 
+                                                    cls.CA_KEY_FILEPATH, 
+                                                    cls.CA_KEY_FILE_PASSWD)
         ca.min_key_nbits = cls.MIN_KEY_NBITS
         
         return key_pair, cert_req, ca
